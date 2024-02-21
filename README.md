@@ -1,16 +1,12 @@
 # expense_tracker
 
-A new Flutter project.
+A project that got me a good understanding of handle data and many moving parts
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+* Expense Logging: Easily log your daily expenses with intuitive interfaces.
+* Category Management: Categorize your expenses for better organization.
+* Budget Tracking: Set budgets for different categories and track your spending against them.
+* Visualizations: Visualize your spending patterns with interactive charts and graphs.
+* Multi-platform: Runs seamlessly on both iOS and Android devices.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
