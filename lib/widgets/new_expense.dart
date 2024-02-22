@@ -32,26 +32,30 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
-  void _showDialog() { 
+  void _showDialog() {
     if (Platform.isIOS) {
-      showCupertinoDialog(   context: context, builder: (ctx) => CupertinoAlertDialog(  title: const Text('Invalid Input'),
-          content: const Text(
-              'Please make sure a valid title, amount, date and category was entered.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Cancel'),
-            ),
-          ], ));
+      showCupertinoDialog(
+          context: context,
+          builder: (ctx) => CupertinoAlertDialog(
+                title: const Text('Invalid Input'),
+                content: const Text(
+                    'Please make sure a valid title, amount, date and category was entered to be able to save.'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Cancel'),
+                  ),
+                ],
+              ));
     } else {
-         showDialog(
+      showDialog(
         context: context,
         builder: (context) => AlertDialog(
           title: const Text('Invalid Input'),
           content: const Text(
-              'Please make sure a valid title, amount, date and category was entered.'),
+              'Please make sure a valid title, amount, date and category was entered to be able to save.'),
           actions: [
             TextButton(
               onPressed: () {
@@ -62,13 +66,9 @@ class _NewExpenseState extends State<NewExpense> {
           ],
         ),
       );
-
-
     }
-      
-          
-      //show error message
-   
+
+    //show error message
   }
 
   void _submitExpenseData() {
@@ -76,8 +76,8 @@ class _NewExpenseState extends State<NewExpense> {
     final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
     if (_titleController.text.trim().isEmpty ||
         amountIsInvalid ||
-        _selectedDate == null)  {
-         _showDialog();
+        _selectedDate == null) {
+      _showDialog();
       return;
     }
     widget.onAddExpense(
